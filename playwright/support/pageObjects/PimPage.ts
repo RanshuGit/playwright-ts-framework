@@ -7,7 +7,7 @@ export class PimPage {
 
   constructor(public readonly page: Page) {
     this.employeeNameInput = this.page.getByRole('textbox', { name: 'Type for hints...' }).first();
-    this.searchButton = this.page.getByRole('button', { name: 'Search' });
+    this.searchButton = this.page.locator('button.oxd-button:nth-child(2)');
     this.firstNameColumn = this.page.locator('div.oxd-table-cell:nth-child(3) > div:nth-child(1)').first();
   }
 

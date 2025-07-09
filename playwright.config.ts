@@ -5,8 +5,8 @@ export default defineConfig({
   testDir: './playwright/e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  retries: parseInt(process.env.RETRIES || '1'),
+  workers: parseInt(process.env.WORKERS || '3'),
   timeout: 30 * 1000,
   expect: {
     timeout: 5000
